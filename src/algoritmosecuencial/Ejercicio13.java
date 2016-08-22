@@ -5,6 +5,8 @@
  */
 package algoritmosecuencial;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aldair
@@ -17,6 +19,7 @@ public class Ejercicio13 extends javax.swing.JFrame {
     public Ejercicio13() {
         initComponents();
         this.setLocationRelativeTo(null);
+        txtIntergrantes.requestFocusInWindow();
         
     }
 
@@ -37,7 +40,7 @@ public class Ejercicio13 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         cmdBorrar = new javax.swing.JButton();
         cmdCalcular = new javax.swing.JButton();
-        txIntergrantes = new javax.swing.JTextField();
+        txtIntergrantes = new javax.swing.JTextField();
         txtIva = new javax.swing.JTextField();
         txtPagar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -78,13 +81,29 @@ public class Ejercicio13 extends javax.swing.JFrame {
         cmdBorrar.setBackground(new java.awt.Color(51, 51, 51));
         cmdBorrar.setForeground(new java.awt.Color(255, 255, 51));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 130, 40));
 
         cmdCalcular.setBackground(new java.awt.Color(51, 51, 51));
         cmdCalcular.setForeground(new java.awt.Color(255, 255, 0));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 120, 40));
-        jPanel1.add(txIntergrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 60, 50));
+
+        txtIntergrantes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIntergrantesKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtIntergrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 60, 50));
         jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 140, 30));
         jPanel1.add(txtPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 190, 30));
 
@@ -109,6 +128,52 @@ public class Ejercicio13 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtIntergrantesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntergrantesKeyTyped
+        char c=evt.getKeyChar();
+        
+        if(!Character.isDigit(evt.getKeyChar())&& evt.getKeyChar() != '.'){
+            getToolkit();
+            
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIntergrantesKeyTyped
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        
+        double iva, tpagar, npersonas, res1;
+        
+        if(txtIntergrantes.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"por favor indique la cantidad de personas de la familia","ERROR",JOptionPane.WARNING_MESSAGE);
+        }else
+            
+        try{
+        npersonas=Double.parseDouble(txtIntergrantes.getText());
+        
+        iva=(npersonas*25000)*0.12;
+        res1=(npersonas*25000);
+        tpagar=res1+iva;
+        
+        txtIntergrantes.setText(""+npersonas);
+        txtPagar.setText(""+tpagar);
+        txtIva.setText(""+iva);
+        
+        txtIntergrantes.requestFocusInWindow();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"el numero ingresado en la casilla de personas es incorrecto","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+    
+        
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtIntergrantes.setText("");
+        txtPagar.setText("");
+        txtIva.setText("");
+        
+        txtIntergrantes.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +220,7 @@ public class Ejercicio13 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txIntergrantes;
+    private javax.swing.JTextField txtIntergrantes;
     private javax.swing.JTextField txtIva;
     private javax.swing.JTextField txtPagar;
     // End of variables declaration//GEN-END:variables
