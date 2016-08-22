@@ -31,6 +31,15 @@ public class Ejercicio13 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cmdBorrar = new javax.swing.JButton();
+        cmdCalcular = new javax.swing.JButton();
+        txIntergrantes = new javax.swing.JTextField();
+        txtIva = new javax.swing.JTextField();
+        txtPagar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,6 +57,36 @@ public class Ejercicio13 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel2.setText("IVA");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel3.setText("Integrantes De La Familia");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel4.setText("Total Pagar");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("Procesador De Datos");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
+        cmdBorrar.setBackground(new java.awt.Color(51, 51, 51));
+        cmdBorrar.setForeground(new java.awt.Color(255, 255, 51));
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 130, 40));
+
+        cmdCalcular.setBackground(new java.awt.Color(51, 51, 51));
+        cmdCalcular.setForeground(new java.awt.Color(255, 255, 0));
+        cmdCalcular.setText("Calcular");
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 120, 40));
+        jPanel1.add(txIntergrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 60, 50));
+        jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 140, 30));
+        jPanel1.add(txtPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 190, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aldair\\Desktop\\istock_000019699924small.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
@@ -107,8 +146,17 @@ public class Ejercicio13 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txIntergrantes;
+    private javax.swing.JTextField txtIva;
+    private javax.swing.JTextField txtPagar;
     // End of variables declaration//GEN-END:variables
 }
