@@ -161,7 +161,7 @@ public class Ejercicio13 extends javax.swing.JFrame {
         txtIntergrantes.requestFocusInWindow();
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"el numero ingresado en la casilla de personas es incorrecto","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"el numero ingresado en la casilla de intergrantes es incorrecto","ERROR",JOptionPane.ERROR_MESSAGE);
         }
     
         
