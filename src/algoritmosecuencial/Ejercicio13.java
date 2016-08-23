@@ -43,6 +43,8 @@ public class Ejercicio13 extends javax.swing.JFrame {
         txtIntergrantes = new javax.swing.JTextField();
         txtIva = new javax.swing.JTextField();
         txtPagar = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtDias = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,19 +61,19 @@ public class Ejercicio13 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         jLabel2.setText("IVA");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         jLabel3.setText("Integrantes De La Familia");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         jLabel4.setText("Total Pagar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
@@ -86,7 +88,7 @@ public class Ejercicio13 extends javax.swing.JFrame {
                 cmdBorrarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 130, 40));
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 130, 40));
 
         cmdCalcular.setBackground(new java.awt.Color(51, 51, 51));
         cmdCalcular.setForeground(new java.awt.Color(255, 255, 0));
@@ -96,20 +98,35 @@ public class Ejercicio13 extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 120, 40));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, 40));
 
         txtIntergrantes.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtIntergrantesKeyTyped(evt);
             }
         });
-        jPanel1.add(txtIntergrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 60, 50));
-        jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 140, 30));
-        jPanel1.add(txtPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 190, 30));
+        jPanel1.add(txtIntergrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 60, 50));
+
+        txtIva.setEditable(false);
+        jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 140, 30));
+
+        txtPagar.setEditable(false);
+        jPanel1.add(txtPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 190, 30));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel6.setText("Dias De Estadia");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+
+        txtDias.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiasKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 60, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aldair\\Desktop\\istock_000019699924small.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 360));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 390));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,8 +147,6 @@ public class Ejercicio13 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtIntergrantesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntergrantesKeyTyped
-        char c=evt.getKeyChar();
-        
         if(!Character.isDigit(evt.getKeyChar())&& evt.getKeyChar() != '.'){
             getToolkit();
             
@@ -141,27 +156,33 @@ public class Ejercicio13 extends javax.swing.JFrame {
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         
-        double iva, tpagar, npersonas, res1;
+        double iva, tpagar,dias, npersonas, res1;
         
-        if(txtIntergrantes.getText().trim().isEmpty()){
+        if(txtIntergrantes.getText().trim().isEmpty() && txtDias.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"por favor LLENE los campos vacios","ERROR",JOptionPane.WARNING_MESSAGE);
+        }else if(txtIntergrantes.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null,"por favor indique la cantidad de personas de la familia","ERROR",JOptionPane.WARNING_MESSAGE);
+        }else if(txtDias.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"por favor indique los dias de estadia en el hotel","ERROR",JOptionPane.WARNING_MESSAGE);
         }else
             
         try{
         npersonas=Double.parseDouble(txtIntergrantes.getText());
+        dias=Double.parseDouble(txtDias.getText());
         
-        iva=(npersonas*25000)*0.12;
-        res1=(npersonas*25000);
+        iva=((npersonas*25000)*dias)*0.12;
+        res1=(npersonas*25000)*dias;
         tpagar=res1+iva;
         
         txtIntergrantes.setText(""+npersonas);
         txtPagar.setText(""+tpagar);
         txtIva.setText(""+iva);
+        txtDias.setText(""+dias);
         
         txtIntergrantes.requestFocusInWindow();
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,"el numero ingresado en la casilla de intergrantes es incorrecto","ERROR",JOptionPane.ERROR_MESSAGE);
+        catch(Exception i){
+            JOptionPane.showMessageDialog(null,"hay numeros incorrectos, por favor verificar","ERROR",JOptionPane.ERROR_MESSAGE);
         }
     
         
@@ -171,9 +192,18 @@ public class Ejercicio13 extends javax.swing.JFrame {
         txtIntergrantes.setText("");
         txtPagar.setText("");
         txtIva.setText("");
+        txtDias.setText("");
         
         txtIntergrantes.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtDiasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiasKeyTyped
+       if(!Character.isDigit(evt.getKeyChar())&& evt.getKeyChar() != '.'){
+            getToolkit();
+            
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDiasKeyTyped
 
     /**
      * @param args the command line arguments
@@ -219,7 +249,9 @@ public class Ejercicio13 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtDias;
     private javax.swing.JTextField txtIntergrantes;
     private javax.swing.JTextField txtIva;
     private javax.swing.JTextField txtPagar;
